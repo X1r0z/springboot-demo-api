@@ -15,7 +15,7 @@ public class JwtUtil {
     private static final String SECRET = "secret";
     private static final long EXPIRATION = 1800L;
 
-    public static Map<String, String> createToken(User user){
+    public static String createToken(User user){
         Date expireDate = new Date(System.currentTimeMillis() + EXPIRATION * 1000);
         Map<String, Object> map = new HashMap<>();
         map.put("alg","HS256");
@@ -28,9 +28,7 @@ public class JwtUtil {
                 .withExpiresAt(expireDate)
                 .withIssuedAt(new Date())
                 .sign(Algorithm.HMAC256(SECRET));
-        Map<String, String> tokenMap = new HashMap<>();
-        tokenMap.put("token", token);
-        return tokenMap;
+        return token;
     }
 
     public static Map<String, Claim> verifyToken(String token){
