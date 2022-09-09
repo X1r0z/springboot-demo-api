@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <select id="selectUser" parameterType="com.example.demo.model.User" resultType="com.example.demo.model.User">
+        SELECT * FROM users WHERE username = #{username} AND password = #{password}
+    </select>
+    <select id="selectUserByName" resultType="com.example.demo.model.User">
+        SELECT * FROM users WHERE username = #{username}
+    </select>
+    <insert id="insertUser" parameterType="com.example.demo.model.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO users(username, password, isAdmin) VALUES(#{username}, #{password}, #{isAdmin})
+    </insert>
+</mapper>
