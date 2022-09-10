@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProductService {
-
     @Autowired
     private ProductMapper productMapper;
 
@@ -24,6 +23,7 @@ public class ProductService {
             return new Result(-1, "product doesn't exist");
         }
     }
+
     public Result get(String name){
         Product product = this.productMapper.selectProductByName(name);
         if (product != null){
@@ -32,6 +32,7 @@ public class ProductService {
             return new Result(-1, "product doesn't exist");
         }
     }
+
     public Result add(Product product){
         if (this.productMapper.selectProductByName(product.getName()) == null){
             if (product.getName() != null && product.getDesc() != null){
@@ -62,7 +63,6 @@ public class ProductService {
         } else {
             return new Result(-1,"product doesn't exist");
         }
-
     }
 }
 

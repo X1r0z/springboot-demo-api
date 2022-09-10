@@ -26,10 +26,12 @@ public class ProductController {
     public Result addProduct(@RequestBody Product product){
         return this.productService.add(product);
     }
+
     @GetMapping("/remove/{id}")
     public Result removeProduct(@PathVariable("id") Integer id){
         return this.productService.remove(id);
     }
+
     @PostMapping("/update")
     public Result updateProduct(@RequestBody Product product){
         return this.productService.update(product);

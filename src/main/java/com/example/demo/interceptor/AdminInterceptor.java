@@ -3,7 +3,6 @@ package com.example.demo.interceptor;
 import com.auth0.jwt.interfaces.Claim;
 import com.example.demo.jwt.JwtUtil;
 import org.springframework.web.servlet.HandlerInterceptor;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
