@@ -25,20 +25,20 @@ mybatis.mapper-locations=classpath:mapper/*.xml
 
 用户相关
 
-| method | url | desc | request data |
-|------|-------------|------|--------|
+| method | url | desc | request body |
+|------|-------------|------|---------|
 | POST | /user/login | 用户登录 | `{"username": "admin", "password": "admin"}` |
-| POST | /user/register | 用户注册 | `{"username": "test", "password": "test"}` |
+| POST | /user/register | 用户注册 | `{"username": "test", "password": "test"}`   |
 
 商品相关
 
-| method | url | desc | request data |
-|-----|-----|------|------------------|
+| method | url | desc | request body |
+|-----|-----|------|-----------------|
 | GET | /product/get | 查询所有商品 | 无 |
-| GET | /product/get/{id} | 查询指定商品 | `{"name": "apple", "desc": "apple desc"}` |
+| GET | /product/get/{id} | 查询指定商品 | 无 |
 | POST | /product/add | 添加商品 | `{"name": "apple", "desc": "apple desc"}` |
-| GET | /product/remove/{id} | 删除指定商品 | 无 |
-| POST | /product/update | 更新指定商品 | `{"name": "apple", "desc": "apple desc"}` |
+| GET | /product/remove/{id} | 删除商品 | 无 |
+| POST | /product/update | 更新商品 | `{"id": 1, name": "apple", "desc": "apple desc"}` |
 
 ## Authorization
 
